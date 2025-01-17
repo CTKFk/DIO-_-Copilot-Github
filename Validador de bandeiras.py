@@ -8,7 +8,11 @@ def validar_bandeira_cartao(numero_cartao):
         "American Express": r"^3[47][0-9]{13}$",
         "Diners Club": r"^3(?:0[0-5]|[68][0-9])[0-9]{11}$",
         "Discover": r"^6(?:011|5[0-9]{2})[0-9]{12}$",
-        "JCB": r"^(?:2131|1800|35\d{3})\d{11}$"
+        "JCB": r"^(?:2131|1800|35\d{3})\d{11}$",
+        "Enroute": r"^(2014|2149)\d{11}$",
+        "Aura": r"^50[0-9]{14,17}$",
+        "Hipercard": r"^606282\d{10}(\d{3})?$",
+        "Voyager": r"^8699[0-9]{11}$"
     }
 
     for bandeira, padrao in bandeiras.items():
