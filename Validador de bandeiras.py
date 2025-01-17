@@ -1,6 +1,7 @@
 import re
 
 def validar_bandeira_cartao(numero_cartao):
+    numero_cartao = numero_cartao.replace(" ", "")  # Remove espaços em branco
     bandeiras = {
         "Visa": r"^4[0-9]{12}(?:[0-9]{3})?$",
         "MasterCard": r"^5[1-5][0-9]{14}$",
@@ -15,7 +16,12 @@ def validar_bandeira_cartao(numero_cartao):
             return bandeira
     return "Bandeira desconhecida"
 
-# Exemplo de uso
-numero_cartao = "5105105105105100"
-bandeira = validar_bandeira_cartao(numero_cartao)
-print(f"A bandeira do cartão é: {bandeira}")
+if __name__ == "__main__":
+    numero_cartao = input("Digite o número do cartão: ")
+    bandeira = validar_bandeira_cartao(numero_cartao)
+    print(f"A bandeira do cartão é: {bandeira}")
+
+# # Exemplo de uso
+# numero_cartao = "3836 249232 5394"
+# bandeira = validar_bandeira_cartao(numero_cartao)
+# print(f"A bandeira do cartão é: {bandeira}")
